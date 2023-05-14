@@ -20,25 +20,25 @@
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |---|  Y  |  U  |  I  |  O  |  P  | BKSP |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |---|  H  |  J  |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |---|  N  |  M  |  ,  |  .  |  /  | ESC  |
-//                       | GUI | NUM |SPC|-|ENT| SYM |ALTgr|
+//                   | MOD/ESC | NUM |SPC|-|ENT| SYM |ALTgr/BKSP|
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+              &mt LGUI ESC &mo 1 &kp SPACE   &kp RET &mo 2 &mt RALT BSPC
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // | BTCLR| BT0 |    | UP |    |   |---|   | 7 | 8 | 9 |   |  BKSP  |
-// |BLEout| BT1 |LEFT|DOWN|RIHT|   |---|   | 4 | 5 | 6 |   |  BLtog |
+// |BLEout| BT1 |LEFT|DOWN|RIHT|MOD|---|   | 4 | 5 | 6 |   |  BLtog |
 // |USBout| BT2 |    |    |    |   |---|   | 1 | 2 | 3 |   | RGBtog |
 //                     |    |    |  |-|  | 0 | . |
                         bindings = <
-   &bt BT_CLR   &bt BT_SEL 0 &none    &kp UP   &none     &none   &none &kp N7 &kp N8 &kp N9 &none &kp BSPC
-   &out OUT_BLE &bt BT_SEL 1 &kp LEFT &kp DOWN &kp RIGHT &none   &none &kp N4 &kp N5 &kp N6 &none &bl BL_TOG
-   &out OUT_USB &bt BT_SEL 2 &none    &none    &none     &none   &none &kp N1 &kp N2 &kp N3 &none &rgb_ug RGB_TOG
-                                      &none    &trans    &none   &none &kp N0 &kp DOT
+   &bt BT_CLR   &bt BT_SEL 0 &none    &kp UP   &none     &none    &none &kp N7 &kp N8 &kp N9 &none &kp BSPC
+   &out OUT_BLE &bt BT_SEL 1 &kp LEFT &kp DOWN &kp RIGHT &kp LGUI &none &kp N4 &kp N5 &kp N6 &none &bl BL_TOG
+   &out OUT_USB &bt BT_SEL 2 &none    &none    &none     &none    &none &kp N1 &kp N2 &kp N3 &none &rgb_ug RGB_TOG
+                                      &none    &trans    &none    &none &kp N0 &kp DOT
                         >;
                 };
 
