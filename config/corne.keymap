@@ -34,15 +34,15 @@
                 };
                 number_layer {
 // -----------------------------------------------------------------------------------------
-// | BTCLR| BT0 |    | UP |    | ON|---|HOM| 7 | 8 | 9 |END|  BKSP  |
-// |BLEout| BT1 |LEFT|DOWN|RIHT|OFF|---|   | 4 | 5 | 6 |PUP| RGBeff |
-// |USBout| BT2 |    |    |    |   |---|   | 1 | 2 | 3 |PDW| RGBtog |
+// | BTCLR| BT0 |    | UP |    |   |---|HOM| 7 | 8 | 9 |END|  BKSP  |
+// |BLEout| BT1 |LEFT|DOWN|RIHT|CTL|---|CTL| 4 | 5 | 6 |PUP| RGBeff |
+// |USBout| BT2 |    |    |    |SHT|---|SHT| 1 | 2 | 3 |PDW| RGBtog |
 //                    |    |    |MOD|-|MOD| 0 | . |
                         bindings = <
-   &bt BT_CLR   &bt BT_SEL 0 &none    &kp UP   &none     &ext_power EP_ON  &kp HOME &kp N7 &kp N8 &kp N9 &kp END   &kp BSPC
-   &out OUT_BLE &bt BT_SEL 1 &kp LEFT &kp DOWN &kp RIGHT &ext_power EP_OFF &none    &kp N4 &kp N5 &kp N6 &kp PG_UP &rgb_ug RGB_EFF
-   &out OUT_USB &bt BT_SEL 2 &none    &none    &none     &none             &none    &kp N1 &kp N2 &kp N3 &kp PG_DN &rgb_ug RGB_TOG
-                                      &none    &trans    &kp LGUI          &kp RGUI &kp N0 &kp DOT
+   &bt BT_CLR   &bt BT_SEL 0 &none    &kp UP   &none     &none     &kp HOME  &kp N7 &kp N8 &kp N9 &kp END   &kp BSPC
+   &out OUT_BLE &bt BT_SEL 1 &kp LEFT &kp DOWN &kp RIGHT &kp LCTRL &kp RCTRL &kp N4 &kp N5 &kp N6 &kp PG_UP &rgb_ug RGB_EFF
+   &out OUT_USB &bt BT_SEL 2 &none    &none    &none     &kp LSHFT &kp RSHFT &kp N1 &kp N2 &kp N3 &kp PG_DN &rgb_ug RGB_TOG
+                                      &none    &trans    &kp LGUI  &kp RGUI  &kp N0 &kp DOT
                         >;
                 };
 
