@@ -34,6 +34,29 @@
         };
     };
 
+    behaviors {
+        super_shift_dance: super_shift_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SUPER_SHIFT_DANCE";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_GUI>,
+                <&kp LS(LGUI)>;
+
+            tapping-term-ms = <150>;
+        };
+        altgr_alt_dance: altgr_alt_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALTGR_ALT_DANCE";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RIGHT_ALT>,
+                <&kp LALT>;
+
+            tapping-term-ms = <150>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
