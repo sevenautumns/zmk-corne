@@ -43,7 +43,7 @@
                 <&kp LEFT_GUI>,
                 <&kp LS(LGUI)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
         };
         altgr_alt_dance: altgr_alt_dance {
             compatible = "zmk,behavior-tap-dance";
@@ -53,7 +53,7 @@
                 <&kp RIGHT_ALT>,
                 <&kp LALT>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
         };
     };
 
