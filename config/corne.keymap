@@ -32,6 +32,11 @@
             bindings = <&kp ESCAPE>;
             key-positions = <15 16>;
         };
+
+        terminal {
+            bindings = <&kp LG(ENTER)>;
+            key-positions = <39 19 20>;
+        };
     };
 
     behaviors {
@@ -39,29 +44,25 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SUPER_SHIFT_DANCE";
             #binding-cells = <0>;
-            bindings =
-                <&kp LEFT_GUI>,
-                <&kp LS(LGUI)>;
+            bindings = <&kp LEFT_GUI>, <&kp LS(LGUI)>;
 
             tapping-term-ms = <250>;
         };
+
         altgr_alt_dance: altgr_alt_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "ALTGR_ALT_DANCE";
             #binding-cells = <0>;
-            bindings =
-                <&kp RIGHT_ALT>,
-                <&kp LALT>;
+            bindings = <&kp RIGHT_ALT>, <&kp LALT>;
 
             tapping-term-ms = <250>;
         };
+
         layer_1_3_dance: layer_1_3_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_1_3_DANCE";
             #binding-cells = <0>;
-            bindings =
-                <&mo 1>,
-                <&mo 3>;
+            bindings = <&mo 1>, <&mo 3>;
         };
     };
 
@@ -76,9 +77,9 @@
             //                  |ALT/ESC| NUM |MOD/SPC|-|MOD/ENT| SYM |ALTgr/BKSP|
 
             bindings = <
-  &kp TAB  &kp Q  &kp W     &kp E             &kp R      &kp T                 &kp Y  &kp U             &kp I    &kp O     &kp P   &kp BSPC
-&kp LCTRL  &kp A  &kp S     &kp D             &kp F      &kp G                 &kp H  &kp J             &kp K    &kp L  &kp SEMI    &kp SQT
-&kp LSHFT  &kp Z  &kp X     &kp C             &kp V      &kp B                 &kp N  &kp M         &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&kp TAB    &kp Q  &kp W  &kp E     &kp R             &kp T        &kp Y               &kp U  &kp I             &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F             &kp G        &kp H               &kp J  &kp K             &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V             &kp B        &kp N               &kp M  &kp COMMA         &kp DOT  &kp FSLH  &kp RSHFT
                          &kp BSPC  &layer_1_3_dance  &kp SPACE    &super_shift_dance  &mo 2  &altgr_alt_dance
             >;
         };
@@ -91,10 +92,10 @@
             //                    |    |    |MOD|-|MOD| 0 | . |
 
             bindings = <
-   &kp TAB  &none     &none    &kp UP      &none      &none     &kp HOME  &kp N7   &kp N8  &kp N9    &kp END  &kp BACKSPACE
- &kp LCTRL  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LCTRL    &kp RCTRL  &kp N4   &kp N5  &kp N6  &kp PG_UP      &kp RCTRL
-&kp LSHIFT  &none     &none     &none      &none  &kp LSHFT    &kp RSHFT  &kp N1   &kp N2  &kp N3  &kp PG_DN     &kp RSHIFT
-                               &trans     &trans     &trans       &trans  &kp N0  &kp DOT
+&kp TAB     &none  &none     &kp UP    &none      &none        &kp HOME   &kp N7  &kp N8   &kp N9  &kp END    &kp BACKSPACE
+&kp LCTRL   &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LCTRL    &kp RCTRL  &kp N4  &kp N5   &kp N6  &kp PG_UP  &kp RCTRL
+&kp LSHIFT  &none  &none     &none     &none      &kp LSHFT    &kp RSHFT  &kp N1  &kp N2   &kp N3  &kp PG_DN  &kp RSHIFT
+                             &trans    &trans     &trans       &trans     &kp N0  &kp DOT
             >;
         };
 
@@ -106,19 +107,19 @@
             //                    | F11 |     | F12 |---|     |     |     |
 
             bindings = <
-  &kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BACKSPACE
-&kp LCTRL    &kp F1  &kp F2    &kp F3    &kp F4     &kp F5    &kp MINUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp BSLH      &kp GRAVE
-&kp LSHFT    &kp F6  &kp F7    &kp F8    &kp F9    &kp F10    &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE      &kp TILDE
-                              &kp F11    &trans    &kp F12        &none     &trans            &none
+&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BACKSPACE
+&kp LCTRL  &kp F1    &kp F2  &kp F3    &kp F4    &kp F5       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &kp F6    &kp F7  &kp F8    &kp F9    &kp F10      &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                             &kp F11   &trans    &kp F12      &none      &trans     &none
             >;
         };
 
         special_layer {
             bindings = <
-  &bt BT_CLR  &bt BT_SEL 0  &none   &none  &none   &none     &none           &none    &kp C_VOLUME_UP       &none  &none            &none
-&out OUT_BLE  &bt BT_SEL 1  &none   &none  &none   &none     &none  &kp C_PREVIOUS   &kp C_PLAY_PAUSE  &kp C_NEXT  &none  &rgb_ug RGB_EFF
-&out OUT_USB  &bt BT_SEL 2  &none   &none  &none   &none     &none           &none  &kp C_VOLUME_DOWN       &none  &none  &rgb_ug RGB_TOG
-                                   &trans  &none  &trans    &trans           &none             &trans
+&bt BT_CLR    &bt BT_SEL 0  &none  &none   &none  &none     &none   &none           &kp C_VOLUME_UP    &none       &none  &none
+&out OUT_BLE  &bt BT_SEL 1  &none  &none   &none  &none     &none   &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT  &none  &rgb_ug RGB_EFF
+&out OUT_USB  &bt BT_SEL 2  &none  &none   &none  &none     &none   &none           &kp C_VOLUME_DOWN  &none       &none  &rgb_ug RGB_TOG
+                                   &trans  &none  &trans    &trans  &none           &trans
             >;
         };
     };
